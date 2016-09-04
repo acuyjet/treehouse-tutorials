@@ -1,0 +1,7 @@
+namespace TreehouseDefense
+{
+    class Tower
+    {
+        
+    }
+}
