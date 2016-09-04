@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 
 namespace TreehouseDefense
 {
-    class Program
+    class Point
     {
-        static void Main(string[] args)
+        public readonly int X;
+        public readonly int Y;
+
+        public Point(int x, int y)
         {
+            X = x;
+            Y = y;
         }
     }
 }
