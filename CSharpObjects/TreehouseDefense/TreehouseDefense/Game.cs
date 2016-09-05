@@ -6,13 +6,25 @@ namespace TreehouseDefense
     {
         public static void Main()
         {
-            Map map = new Map(8,5);
+            Map map = new Map(8, 5);
 
-            //int area = map.Width * map.Height;
+            try
+            {
+            MapLocation mapLocation = new MapLocation(20, 20, map);
 
-            Point point = new Point(4,2);
-            
-            Console.WriteLine(point.DistanceTo(5, 5));
+            }
+            catch(OutOfBoundsException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch(TreehouseDefenseException)
+            {
+                Console.WriteLine("Unhandled TreeHouseDefenseException");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Unhandled Exception");           
+            }
         }
     }
 }
