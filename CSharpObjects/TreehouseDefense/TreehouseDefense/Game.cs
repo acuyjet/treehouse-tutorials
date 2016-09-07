@@ -23,14 +23,6 @@ namespace TreehouseDefense
                         }
                     );
 
-                MapLocation location = path.GetLocationAt(9);
-
-                //null check
-                if (location != null)
-                {
-                    Console.WriteLine(location.X + ", " + location.Y);
-                }
-
             }
             catch (OutOfBoundsException ex)
             {
