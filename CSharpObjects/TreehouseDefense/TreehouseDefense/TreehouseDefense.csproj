@@ -46,6 +46,7 @@
     <Compile Include="Exceptions.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Invader.cs" />
+    <Compile Include="Level.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="MapLocation.cs" />
     <Compile Include="Path.cs" />

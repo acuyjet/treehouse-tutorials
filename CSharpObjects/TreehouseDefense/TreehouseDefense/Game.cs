@@ -23,6 +23,45 @@ namespace TreehouseDefense
                         }
                     );
 
+                Invader[] invaders =
+                { new Invader(path),
+                  new Invader(path),
+                  new Invader(path),
+                  new Invader(path)
+                };
+
+                //TODO: Prompt user to place towers via command-line
+
+                Console.WriteLine("Enter x coordinate for Tower 1:");
+                string towerOneX = Console.ReadLine();
+                Console.WriteLine("Enter y coordinate for Tower 1:");
+                string towerOneY = Console.ReadLine();
+                Console.WriteLine("Enter x coordinate for Tower 2:");
+                string towerTwoX = Console.ReadLine();
+                Console.WriteLine("Enter y coordinate for Tower 2:");
+                string towerTwoY = Console.ReadLine();
+                Console.WriteLine("Enter x coordinate for Tower 3:");
+                string towerThreeX = Console.ReadLine();
+                Console.WriteLine("Enter y coordinate for Tower 3:");
+                string towerThreeY = Console.ReadLine();
+
+
+                Tower[] towers =
+                {
+                    new Tower(new MapLocation(int.Parse(towerOneX), int.Parse(towerOneY), map)),
+                    new Tower(new MapLocation(int.Parse(towerTwoX), int.Parse(towerTwoY), map)),
+                    new Tower(new MapLocation(int.Parse(towerThreeX), int.Parse(towerThreeY), map)),
+                };
+
+                Level level = new Level(invaders)
+                {
+                    Towers = towers
+                };
+
+                bool playerWon = level.Play();
+
+                Console.WriteLine("Player " + (playerWon ? "won" : "lost"));
+
             }
             catch (OutOfBoundsException ex)
             {
@@ -39,3 +78,4 @@ namespace TreehouseDefense
         }
     }
 }
+//TODO: One of the practice problems from the C# Objects Wrap Up video
