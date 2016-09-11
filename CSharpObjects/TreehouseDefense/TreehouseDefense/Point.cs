@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace TreehouseDefense
 {
+    //Represents a coordinate on the grid
     class Point
     {
         public readonly int X;
@@ -28,6 +29,7 @@ namespace TreehouseDefense
             return (int)Math.Sqrt(Math.Pow(X - x, 2) + Math.Pow(Y - y, 2));
         }
 
+        //Overloaded method -- accepts different parameters than the DistanceTo method above
         public int DistanceTo(Point point)
         {
             return DistanceTo(point.X, point.Y);

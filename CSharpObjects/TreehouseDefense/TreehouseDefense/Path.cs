@@ -2,6 +2,7 @@ using System;
 
 namespace TreehouseDefense
 {
+    //A Path is a list of adjacent map locations
     class Path
     {
         private readonly MapLocation[] _path;

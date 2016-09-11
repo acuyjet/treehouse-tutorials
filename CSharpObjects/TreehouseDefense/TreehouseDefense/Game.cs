@@ -24,14 +24,13 @@ namespace TreehouseDefense
                     );
 
                 Invader[] invaders =
-                { new Invader(path),
-                  new Invader(path),
-                  new Invader(path),
+                { new ShieldedInvader(path),
+                  new FastInvader(path),
+                  new StrongInvader(path),
                   new Invader(path)
                 };
 
                 //TODO: Prompt user to place towers via command-line
-
                 Console.WriteLine("Enter x coordinate for Tower 1:");
                 string towerOneX = Console.ReadLine();
                 Console.WriteLine("Enter y coordinate for Tower 1:");
@@ -53,6 +52,7 @@ namespace TreehouseDefense
                     new Tower(new MapLocation(int.Parse(towerThreeX), int.Parse(towerThreeY), map)),
                 };
 
+                //Construct Level object and pass it the invaders that will be in the level
                 Level level = new Level(invaders)
                 {
                     Towers = towers

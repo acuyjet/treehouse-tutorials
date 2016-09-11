@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace TreehouseDefense
 {
+    //Contains a list of invaders and towers
     class Level
     {
         private readonly Invader[] _invaders;
