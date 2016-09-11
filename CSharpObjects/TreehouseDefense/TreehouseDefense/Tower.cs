@@ -34,7 +34,7 @@ namespace TreehouseDefense
                         
                         if (invader.IsDead)
                         {
-                            Console.WriteLine("You destroyed an invader!");
+                            Console.WriteLine("You destroyed an invader at " + invader.Location);
                         }
                     }
                     else
