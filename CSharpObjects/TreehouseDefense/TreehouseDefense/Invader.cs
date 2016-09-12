@@ -2,7 +2,7 @@ using System;
 
 namespace TreehouseDefense
 {
-    class Invader
+    abstract class Invader: IInvader
     {
         private readonly Path _path;
         //Keeps track of invader's location on the path
@@ -13,12 +13,13 @@ namespace TreehouseDefense
         //Computed property
         public MapLocation Location => _path.GetLocationAt(_pathStep);
 
-        public virtual int Health { get; protected set; } = 2;
+        public abstract int Health { get; protected set; }
 
         //Computed property
         public bool HasScored { get { return _pathStep >= _path.Length; } }
 
         public bool IsDead => Health <= 0;
+
         public bool IsActive => !(IsDead || HasScored);
 
         public Invader(Path path)

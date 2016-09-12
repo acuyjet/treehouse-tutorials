@@ -8,8 +8,6 @@ namespace TreehouseDefense
         protected virtual int Power { get; } = 1;
         protected virtual double Accuracy { get; } = 0.75;
 
-        private static readonly Random _random = new Random();
-
         private readonly MapLocation _location;
 
         public Tower(MapLocation location)
@@ -19,19 +17,19 @@ namespace TreehouseDefense
 
         public bool IsSuccessfulShot()
         {
-            return _random.NextDouble() < Accuracy;
+            return Random.NextDouble() < Accuracy;
         }
 
-        public void FireOnInvaders(Invader[] invaders)
+        public void FireOnInvaders(IInvader[] invaders)
         {
-            foreach (Invader invader in invaders)
+            foreach (IInvader invader in invaders)
             {
                 if (invader.IsActive && _location.InRangeOf(invader.Location, Range))
                 {
                     if (IsSuccessfulShot())
                     {
                         invader.DecreaseHealth(Power);
-                        
+
                         if (invader.IsDead)
                         {
                             Console.WriteLine("You destroyed an invader at " + invader.Location);

@@ -23,18 +23,12 @@ namespace TreehouseDefense
                         }
                     );
 
-                MapLocation location = new MapLocation(0, 2, map);
-                if (path.IsOnPath(location))
-                {
-                    Console.WriteLine("Location is on the path");
-                    return;
-                }
-
-                Invader[] invaders =
+                IInvader[] invaders =
                 { new ShieldedInvader(path),
                   new FastInvader(path),
                   new StrongInvader(path),
-                  new Invader(path)
+                  new BasicInvader(path),
+                  new ResurrectingInvader(path)
                 };
 
                 //TODO: Prompt user to place towers via command-line
@@ -86,3 +80,4 @@ namespace TreehouseDefense
     }
 }
 //TODO: One of the practice problems from the C# Objects Wrap Up video
+//TODO: One of the projects from the Intermediate C# Wrap Up video
