@@ -1,2 +1,6 @@
 # Treehouse-tutorials
-Excercises from the C# Objects, Intermediate C#, and C# Streams and Data Processing courses
+Excercises from the following courses:  
+* C# Objects
+* Intermediate C#
+* C# Streams and Data Processing
+* SQL Basics
