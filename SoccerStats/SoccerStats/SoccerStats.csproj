@@ -48,10 +48,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameResult.cs" />
+    <Compile Include="NewsSearch.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayerComparer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SentimentRequest.cs" />
+    <Compile Include="SentimentResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
