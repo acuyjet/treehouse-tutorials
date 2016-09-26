@@ -1,17 +1,5 @@
 ﻿@{
     Layout = null;
-    var seriesTitle = "Saga";
-    var issueNumber = 38;
-    var description = "<p>\"THE WAR FOR PHANG,\" Part Two. When your babysitter's a ghost, death is never very far away.</p>";
-    var credits = new string[]
-    {
-        "Script: Brian K. Vaughan",
-        "Pencils: Fiona Staples",
-        "Inks: Fiona Staples",
-        "Colors: Fiona Staples",
-        "Letters: Fonografiks",
-        "Cover: Fiona Staples"
-    };
 }
 
 <!DOCTYPE html>
@@ -23,25 +11,24 @@
 </head>
 <body>
     <div>
-        <h1>@seriesTitle</h1>
-        <h2>Issue #@issueNumber</h2>
+        <h1>@ViewBag.SeriesTitle</h1>
+        <h2>Issue #@ViewBag.IssueNumber</h2>
 
         <h5>Description:</h5>
-        <div>@Html.Raw(description)</div>
+        <div>@Html.Raw(ViewBag.Description)</div>
 
-        @if (credits.Length > 0)
+        @if (ViewBag.Credits.Length > 0)
         {
             <h5>Credits:</h5>
             <div>
                 <ul>
-                    @foreach (var item in credits)
+                    @foreach (var item in ViewBag.Credits)
                     {
                         <li>@item</li>
                     }
                 </ul>
             </div>
         }
-
     </div>
 </body>
 </html>
