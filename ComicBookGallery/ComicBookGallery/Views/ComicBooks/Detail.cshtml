@@ -29,8 +29,19 @@
         <h5>Description:</h5>
         <div>@Html.Raw(description)</div>
 
-        <h5>Credits:</h5>
-        <div>@credits</div>
+        @if (credits.Length > 0)
+        {
+            <h5>Credits:</h5>
+            <div>
+                <ul>
+                    @foreach (var item in credits)
+                    {
+                        <li>@item</li>
+                    }
+                </ul>
+            </div>
+        }
+
     </div>
 </body>
 </html>
