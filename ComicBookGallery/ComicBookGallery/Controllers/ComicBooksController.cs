@@ -13,7 +13,7 @@ namespace ComicBookGallery.Controllers
             ViewBag.SeriesTitle = "Saga";
             ViewBag.IssueNumber = 38;
             ViewBag.Description = "<p>\"THE WAR FOR PHANG,\" Part Two. When your babysitter's a ghost, death is never very far away.</p>";
-            ViewBag.Credits = new string[]
+            ViewBag.Creators = new string[]
             {
                 "Script: Brian K. Vaughan",
                 "Pencils: Fiona Staples",
