@@ -12,6 +12,7 @@ namespace ComicBookGallery.Models
         public int IssueNumber { get; set; }
         public string DescriptionHtml { get; set; }
         public Creator[] Creators { get; set; }
+        public string Publisher { get; set; }
         public bool Favorite { get; set; }
 
         //Read-only properties

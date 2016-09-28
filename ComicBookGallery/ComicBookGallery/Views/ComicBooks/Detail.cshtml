@@ -1,27 +1,30 @@
-﻿@{
+﻿@model ComicBookGallery.Models.ComicBook
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = "Comic Book Gallery";
+    ViewBag.Title = Model.DisplayText;
 }
 
 <!DOCTYPE html>
 
-
-<h1>@ViewBag.SeriesTitle</h1>
-<h2>Issue #@ViewBag.IssueNumber</h2>
+<h1>@Model.SeriesTitle</h1>
+<h2>Issue #@Model.IssueNumber</h2>
 
 <h5>Description:</h5>
-<div>@Html.Raw(ViewBag.Description)</div>
+<div>@Html.Raw(Model.DescriptionHtml)</div>
 
-@if (ViewBag.Credits.Length > 0)
+@if (Model.Creators.Length > 0)
 {
     <h5>Credits:</h5>
-            <div>
-                <ul>
-                    @foreach (var item in ViewBag.Creators)
-                    {
-                        <li>@item</li>
-                    }
-                </ul>
-            </div>
+    <div>
+        <ul>
+            @foreach (var creator in Model.Creators)
+            {
+                <li>@creator.Role: @creator.Name</li>
+            }
+        </ul>
+    </div>
 }
+<h5>Publisher:</h5>
+<div>@Model.Publisher</div>
+
 
