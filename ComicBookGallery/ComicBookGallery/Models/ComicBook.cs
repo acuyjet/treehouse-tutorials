@@ -25,7 +25,8 @@ namespace ComicBookGallery.Models
             //Filenames should follow the format seriestitle-issuenumber.jpg
             get
             {
-                return SeriesTitle.Replace(" ", "-").ToLower() + " " + IssueNumber + ".jpg";
+                return SeriesTitle.Replace(" ", "-").ToLower() + "-" + IssueNumber + ".jpg";
+
             }
         }
     }
