@@ -3,6 +3,10 @@
     padding-bottom: 20px;
 }
 
+footer {
+    max-width: 1920px;
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;

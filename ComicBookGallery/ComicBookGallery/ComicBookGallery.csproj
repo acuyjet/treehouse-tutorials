@@ -93,9 +93,9 @@
     <Content Include="Content\site.css" />
     <Content Include="Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Images\bone-50.jpg" />
+    <Content Include="Images\jessica-jones-1.jpg" />
+    <Content Include="Images\pretty-deadly-10.jpg" />
     <Content Include="Images\saga-38.jpg" />
-    <Content Include="Images\the-amazing-spider-man-657.jpg" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

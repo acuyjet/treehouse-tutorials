@@ -12,6 +12,7 @@ namespace ComicBookGallery.Data
         {
         new ComicBook()
         {
+            Id = 1,
             SeriesTitle = "Saga",
             IssueNumber = 38,
             DescriptionHtml = "<p>\"THE WAR FOR PHANG,\" Part Two. When your babysitter's a ghost, death is never very far away.</p>",
@@ -29,6 +30,7 @@ namespace ComicBookGallery.Data
         },
         new ComicBook()
         {
+            Id = 2,
             SeriesTitle = "Jessica Jones",
             IssueNumber = 1,
             DescriptionHtml = "<pShe is back after a decade! A lot has changed in the Marvel Universe and there are still many secrets hiding in the shadows. Secrets only a special woman like Jessica Jones can hope to uncover. Discover the haunting secrets from Jessica’s past in this blistering new series. Alias Investigations is open for business.</p>",
@@ -46,6 +48,7 @@ namespace ComicBookGallery.Data
             },
         new ComicBook()
         {
+            Id = 3,
             SeriesTitle = "Pretty Deadly",
             IssueNumber = 10,
             DescriptionHtml = "<p>The second arc concludes with the death of Sarah.</p>",
