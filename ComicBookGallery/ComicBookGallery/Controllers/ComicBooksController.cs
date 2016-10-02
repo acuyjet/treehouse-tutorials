@@ -18,6 +18,12 @@ namespace ComicBookGallery.Controllers
             _comicBookRepository = new ComicBookRepository();
         }
 
+        public ActionResult Index()
+        {
+            var comicBooks = _comicBookRepository.GetComicBooks();
+            return View(comicBooks);
+        }
+
         //? allows id parameter to be nullable if not provided as part of the request
         public ActionResult Detail(int? id)
         {
