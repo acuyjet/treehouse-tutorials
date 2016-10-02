@@ -96,7 +96,6 @@
     <Content Include="Images\bone-50.jpg" />
     <Content Include="Images\saga-38.jpg" />
     <Content Include="Images\the-amazing-spider-man-657.jpg" />
-    <Content Include="Images\the-amazing-spider-man-700.jpg" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -107,6 +106,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ComicBooksController.cs" />
+    <Compile Include="Data\ComicBookRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
