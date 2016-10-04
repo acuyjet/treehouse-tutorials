@@ -29,6 +29,9 @@ namespace QueryingWithLinq
             converse("Nice to see you.");
             converse("Say hi to your mother for me.");
             sayGreeting("Goodbye, {0}");
+
+            var numbers = new List<int> { 2, 4, 8, 16, 32, 64 };
+            numbers.Where(n => n > 10);
         }
     }
 }
