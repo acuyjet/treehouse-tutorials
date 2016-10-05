@@ -8,41 +8,69 @@ namespace BirdWatcher
 {
     public class Bird
     {
-        public Bird(string name, string color, int sightings)
+
+        public string CommonName { get; set; }
+        public string Family { get; set; }
+        public string ScientificName { get; set; }
+        public string PrimaryColor { get; set; }
+        public string SecondaryColor { get; set; }
+        public List<string> TertiaryColors { get; set; }
+        public double Length { get; set; }
+        public double Width { get; set; }
+        public double Weight { get; set; }
+        public string Size
         {
-            Name = name;
-            Color = color;
-            Sightings = sightings;
+            get
+            {
+                if (Length >= 0 && Length < 15)
+                    return "Tiny";
+                else if (Length >= 15 && Length < 30)
+                    return "Small";
+                else if (Length >= 30 && Length < 50)
+                    return "Medium";
+                else if (Length >= 50)
+                    return "Large";
+                return "Unknown";
+            }
         }
+        public List<Sighting> Sightings { get; set; }
+        public List<Place> Habitats { get; set; }
 
-        public Bird()
-        {
-        }
-
-        public string Name { get; set; }
-        public string Color { get; set; }
-        public int Sightings { get; set; }
-
+        // LeastConcerned,NearThreathened,Vulnerable,Endangered,CriticallyEndangered,ExtinctInTheWild,Extinct
+        public string ConservationStatus { get; set; }
+        public string ConservationCode { get; set; }
         public override string ToString()
         {
-            return string.Format("Name: {0}, Color: {1}, Sightings: {2}\n", Name, Color, Sightings);
+            return string.Format("Name: {0}\n", CommonName);
+        }
+
+        public Bird(RandomUtility utility, string family, string commonName, string scientificName,
+                    double length, double width, double weight, int sightings, string primaryColor,
+                    string secondaryColor, string tertiaryColors, string habitats, string status, string statusCode)
+        {
+            CommonName = commonName;
+            ScientificName = scientificName;
+            Length = length;
+            Width = width;
+            Weight = weight;
+            Sightings = utility.AddRandomSightings(sightings);
+            PrimaryColor = primaryColor;
+            SecondaryColor = secondaryColor;
+            TertiaryColors = new List<string>();
+            Habitats = new List<Place>();
+            ConservationStatus = status;
+            ConservationCode = statusCode;
+
+            string[] colors = tertiaryColors.Split('|');
+            TertiaryColors.AddRange(colors.ToList());
+
+            string[] countries = habitats.Split('|');
+            countries.ToList().ForEach(c =>
+            {
+                Habitats.Add(new Place { Country = c });
+            });
         }
     }
 
-    public static class BirdRepository
-    {
-        public static List<Bird> LoadBirds()
-        {
-            return new List<Bird>
-            {
-                new Bird ( "Cardinal", "Red", 3 ),
-                new Bird ( "Dove", "White", 2 ),
-                new Bird ( "Robin", "Red", 5 ),
-                new Bird ( "Blue Jay", "Blue", 1 ),
-                new Bird ( "Canary", "Yellow", 0 ),
-                new Bird ( "Crow", "Black", 11 ),
-                new Bird ( "Pidgeon", "White", 10 )
-            };
-        }
-    }
+
 }
