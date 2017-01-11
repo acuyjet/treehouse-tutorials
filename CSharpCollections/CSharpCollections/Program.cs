@@ -10,40 +10,28 @@ namespace CSharpCollections
     {
         static void Main(string[] args)
         {
-            List<Student> students = new List<Student>
+            HashSet<Student> students = new HashSet<Student>
             {
                 new Student() {Name = "Sally", GradeLevel = 3 },
                 new Student() {Name = "Bob", GradeLevel = 3 },
                 new Student() {Name = "Sally", GradeLevel = 2 }
             };
 
-            //students.Sort();
+            Student joe = new Student() { Name = "Joe", GradeLevel = 2 };
+            students.Add(joe);
 
-            //Student newStudent = new Student() { Name = "Joe", GradeLevel = 2 };
+            Student duplicateJoe = new Student() { Name = "Joe", GradeLevel = 2 };
+            students.Add(duplicateJoe);
 
-            //int index = students.BinarySearch(newStudent);
+            if (students.Contains(joe))
+            {
+                Console.WriteLine("Hey, Joe");
+            }
 
-            //if (index < 0)
-            //{
-            //    //Bitwise compliment: ~ (negates index and subtracts 1)
-            //    students.Insert((~index), newStudent);
-            //}
-            //foreach (Student student in students)
-            //{
-            //    Console.WriteLine($"{student.Name} is in Grade {student.GradeLevel}");
-            //}
-            //Console.ReadKey();
+            //Console.WriteLine(joe.GetHashCode());
+            //Console.WriteLine(duplicateJoe.GetHashCode());
 
-
-            SchoolRoll schoolRoll = new SchoolRoll();
-            schoolRoll.AddStudents(students);
-
-            //schoolRoll.Students.RemoveAt(0);
-            //schoolRoll.Students.Sort();
-            //schoolRoll.Students.AddRange(students);
-
-
-            foreach (Student student in schoolRoll.Students)
+            foreach (Student student in students)
             {
                 Console.WriteLine($"{student.Name} is in Grade {student.GradeLevel}");
             }
