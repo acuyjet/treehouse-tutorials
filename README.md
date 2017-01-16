@@ -5,3 +5,4 @@ Excercises from the following courses:
 * C# Streams and Data Processing
 * ASP.NET MVC Basics
 * Javascript and the DOM
+* Introduction to jQuery
