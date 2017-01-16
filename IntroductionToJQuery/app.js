@@ -1,19 +1,9 @@
-$('li').on('click', function () {
-    $(this).text("Clicked!").delay(800).fadeOut(400);
+console.log($('a').attr('href'));
+
+//Opens all external links in new tabs
+$('a').not('[href*="my-domain.com"]').attr("target", "_blank");
+
+$('button').on('click', function () {
+    $('a').attr('href', 'https://github.com');
+    console.log($('a').attr('href'));
 });
-
-//Element selectors
-//  $('li');
-//  $('a');
-//  $('img');
-//  $('p');
-
-//Descendant selectors
-//  $('p a');
-//    
-//Classes and ids
-//  $('.blog-post');
-//  $('#about');
-//    
-//Attribute selectors
-//  $("[name='newsletter']");
