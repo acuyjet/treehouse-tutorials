@@ -1,15 +1,97 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <title>Treehouse Pet Adoption</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Open+Sans:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <a href="https://www.google.com/">Go somewhere else!</a>
-    <button>Change Destination</button>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script src="app.js"></script>
-    <script src="app.js"></script>
-</body>
+  <header>
+    <nav class="container">
+      <h1 class="logo"><img src="images/logo.png" /></h1>
+      <ul>
+        <li><a href="index.html">Adopt</a></li>
+        <li><a href="post.html">Post</a></li>
+      </ul>
+    </nav>
+  </header>
+  <h2 class="page-header">These kittens want to find their purrever homes!</h2>
+  <main class="container adoptable">
+    <div class="row">
+      <section class="six columns">
+        <div class="card">
+          <img src="images/kitten1.jpg" alt="adorable kitten">
+          <p>
+            <strong>Name:</strong> Florence
+          </p>
+          <p class="loc">
+            <strong>Location:</strong> Treehouse Adoption Center
+          </p>
+          <p>
+            <strong>Notes:</strong> Dreams of murder all day!
+          </p>
+          <button class="full">Adopt!</button>
+        </div>
+      </section>
+      <section class="six columns">
+        <div class="card">
+          <img src="images/kitten2.jpg" alt="cute kitten">
+          <p>
+            <strong>Name:</strong> Henrietta
+          </p>
+          <p class="loc">
+            <strong>Location:</strong> Treehouse Adoption Center
+          </p>
+          <p>
+            <strong>Notes:</strong> Gets a little frisky around catnip.
+          </p>
+          <button class="full">Adopt!</button>
+        </div>
+      </section>
+    </div>
+    <div class="row">
+      <section class="six columns">
+        <div class="card">
+          <img src="images/kitten3.jpg" alt="fuzzy kitten">
+          <p>
+            <strong>Name:</strong> Jerry
+          </p>
+          <p class="loc">
+            <strong>Location:</strong> Treehouse Adoption Center
+          </p>
+          <p>
+            <strong>Notes:</strong> You're sitting in his chair.
+          </p>
+          <button class="full">Adopt!</button>
+        </div>
+      </section>
+      <section class="six columns">
+        <div class="card">
+          <img src="images/kitten4.jpg" alt="ridiculous floofypants">
+          <p>
+            <strong>Name:</strong> Norma
+          </p>
+          <p class="loc">
+            <strong>Location:</strong> Treehouse Adoption Center
+          </p>
+          <p>
+            <strong>Notes:</strong> Loves a good bath. No, really.
+          </p>
+          <button class="full">Adopt!</button>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <p class="container">
+      Made with &lt;3 fur kitties by <a href="#">Aisha Blake & Allison Cuyjet</a>
+    </p>
+  </footer>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+  <script src="app.js"></script>
+</body>
 </html>
