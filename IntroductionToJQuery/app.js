@@ -6,23 +6,33 @@ $('.loc').hover(
         $(this).html("<strong>Location:</strong> Treehouse Adoption Center");
     });
 
-//Adds a pet to the age with user input on button click
+//Adds a pet to the page with user input on button click
 $('#add-pet').on('click', function () {
     //Grab info from the Post form
-    const $name = $('#pet-name').val();
-    const $species = $('#pet-species').val();
-    const $notes = $('#pet-notes').val();
+    const $name = $('#pet-name');
+    const $species = $('#pet-species');
+    const $notes = $('#pet-notes');
 
     //Create new HTML elements
     const $newPet = $(
-        '<section class="six columns"><div class="card"><p><strong>Name:</strong> ' + $name + 
-        '</p><p><strong>Species:</strong> ' + $species + 
-        '</p><p><strong>Notes:</strong> ' + $notes + 
+        '<section class="six columns"><div class="card"><p><strong>Name:</strong> ' + $name.val() + 
+        '</p><p><strong>Species:</strong> ' + $species.val() + 
+        '</p><p><strong>Notes:</strong> ' + $notes.val() + 
         '</p><span class="close">&times;</span></div></section>'
     );
 
     //Attach the new element to the page
     $('#posted-pets').append($newPet);
+
+    //Reset form fields
+    $name.val('');
+    $species.val('Dog');
+    $notes.val('');
+
+    //Remove section when user clicks on the X
+    $('.close').on('click', function () {  
+        $(this).parent().remove();
+    });
 });
 
 //Fade in for kitten photos
