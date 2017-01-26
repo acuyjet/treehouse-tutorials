@@ -6,3 +6,4 @@ Excercises from the following courses:
 * ASP.NET MVC Basics
 * Javascript and the DOM
 * Introduction to jQuery
+* Node.js Basics
