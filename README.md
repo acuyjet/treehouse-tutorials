@@ -8,3 +8,4 @@ Excercises from the following courses and workshops:
 * Introduction to jQuery
 * Node.js Basics
 * The Module Pattern in Javascript
+* Introducing ES2015
