@@ -1,5 +1,5 @@
 # Treehouse-tutorials
-Excercises from the following courses:  
+Excercises from the following courses and workshops:  
 * C# Objects
 * Intermediate C#
 * C# Streams and Data Processing
@@ -7,3 +7,4 @@ Excercises from the following courses:
 * Javascript and the DOM
 * Introduction to jQuery
 * Node.js Basics
+* The Module Pattern in Javascript
