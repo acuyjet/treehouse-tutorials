@@ -5,13 +5,17 @@ var Portland = {
     logNumberOfBridges: function() {
         console.log("There are " + this.bridges + " bridges in Portland!")
     }
+
 }
 
 function logTeams() {
-    console.log(this);
+    console.log(this.soccerTeams);
 }
 
 Portland.foo = logTeams;
 
+Portland.logNumberOfBridges();
+// Portland.logTeams();
 Portland.foo();
+
 logTeams();

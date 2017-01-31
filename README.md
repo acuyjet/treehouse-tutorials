@@ -9,3 +9,4 @@ Excercises from the following courses and workshops:
 * Node.js Basics
 * The Module Pattern in Javascript
 * Introducing ES2015
+* Understanding "This" in JavaScript
