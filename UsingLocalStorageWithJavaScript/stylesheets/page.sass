@@ -1,0 +1,88 @@
+$white: #FCFFF5
+$tan: #D1DBBD
+$teal: #91AA9D
+$blue: #3E606F
+$dark: #193441
+$headers: "h1, h2, h3, h4, h5, h6"
+$font-family: "Bitter", "Helvetica", Helvetica, Arial, sans-serif
+$section-padding: 40px 15px 50px
+$title-margin: 30px
+$border-style: solid 1px lighten($tan, 10%)
+$max-width: 600px
+
+$transition-duration: 150ms
+$transition-ease: ease-in-out
+
+*
+  box-sizing: border-box
+
+body
+  background-color: $white
+  font-family: $font-family
+  padding: 0
+  margin: 0
+
+#{$headers}
+  margin: 0
+  font-weight: normal
+
+.button
+  background-color: $blue
+  border: none
+  color: $white
+  font: 16px/50px $font-family
+  font-weight: normal
+  height: 50px
+  padding: 0 30px
+  transition: background-color $transition-duration $transition-ease
+  &:hover,
+  &:focus
+    background-color: lighten($blue, 15%)
+    outline: none
+
+.text-input
+  border: none
+  color: $blue
+  font: 18px $font-family
+  height: 50px
+  line-height: 50px
+  padding: 20px
+  max-width: $max-width
+  margin-bottom: 5px
+  width: 100%
+  position: relative
+  top: 1px
+  transition: box-shadow $transition-duration $transition-ease
+  &:focus
+    outline: none
+    box-shadow: 0 0 0 3px lighten($blue, 15%) inset
+
+.header
+  background-color: $dark
+  padding: $section-padding
+  text-align: center
+  &-title
+    color: $white
+    font-size: 50px
+    margin-bottom: $title-margin
+
+.recent
+  text-align: center
+  padding: $section-padding
+  margin: 0 auto
+  max-width: $max-width
+  width: 100%
+  &-title
+    color: $blue
+    margin-bottom: $title-margin
+  &-list
+    list-style: none
+    padding: 0
+    margin: 40px 0
+    border-top: $border-style
+    li
+      border-bottom: $border-style
+      color: $teal
+      font-size: 16px
+      line-height: 1.5
+      padding: 15px 20px
