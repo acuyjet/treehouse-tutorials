@@ -11,3 +11,4 @@ Excercises from the following courses and workshops:
 * Introducing ES2015
 * Understanding "This" in JavaScript
 * Using Local Storage With JavaScript
+* Understanding Promises in JavaScript
