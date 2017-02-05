@@ -1,5 +1,5 @@
 # Treehouse-tutorials
-Excercises from the following courses and workshops:  
+Exercises from the following courses and workshops:  
 * C# Objects
 * Intermediate C#
 * C# Streams and Data Processing
@@ -12,3 +12,4 @@ Excercises from the following courses and workshops:
 * Understanding "This" in JavaScript
 * Using Local Storage With JavaScript
 * Understanding Promises in JavaScript
+* Build a Simple Dynamic Site With Node.js
