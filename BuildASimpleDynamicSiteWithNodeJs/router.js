@@ -1,22 +1,39 @@
-var Profile = require("./profile.js");
+var Profile = require('./profile.js');
 var renderer = require('./renderer.js');
+var querystring = require('querystring');
+
+var commonHeaders = {
+    'Content-Type': 'text/html'
+}
 
 // Handle HTTP route GET / and POST / (i.e. home)
 function home(req, res) {
     // if URL == "/" && GET
     if (req.url === '/') {
-        // show search field
-        res.writeHead(200, {
-            'Content-Type': 'text/plain'
-        });
-        renderer.view('header', {}, res);
-        renderer.view('search', {}, res);
-        renderer.view('footer', {}, res);
-        res.end();
-    }
+        if (req.method.toLowerCase() === 'get') {
+            // show search field
+            res.writeHead(200, commonHeaders);
+            renderer.view('header', {}, res);
+            renderer.view('search', {}, res);
+            renderer.view('footer', {}, res);
+            res.end();
+        } else {
+            // if URL == "/" && POST
 
-    // if URL == "/" && POST
-    // redirect to /username
+            // Get the POST data from body
+            req.on('data', function(postBody) {
+                // console.log(postBody.toString());
+                // Extract username
+                var query = querystring.parse(postBody.toString());
+                // redirect to /username
+                res.writeHead(303, {
+                    'Location': '/' + query.username
+                });
+                res.end();
+            });
+
+        }
+    }
 }
 
 // Handle HTTP route GET /username
@@ -24,9 +41,7 @@ function user(req, res) {
     // if URL == "/..."
     var username = req.url.replace('/', '');
     if (username.length > 0) {
-        res.writeHead(200, {
-            'Content-Type': 'text/plain'
-        });
+        res.writeHead(200, commonHeaders);
         renderer.view('header', {}, res);
 
         // get JSON from Treehouse
