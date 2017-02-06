@@ -1,0 +1,14 @@
+{
+    "name": "dice_simulator_2015",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Andrew Chalkley",
+    "license": "MIT",
+    "devDependencies": {
+        "mocha": "^2.2.5",
+        "uglify-js": "^2.4.23"
+    }
+}

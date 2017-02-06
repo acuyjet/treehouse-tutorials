@@ -13,3 +13,4 @@ Exercises from the following courses and workshops:
 * Using Local Storage With JavaScript
 * Understanding Promises in JavaScript
 * Build a Simple Dynamic Site With Node.js
+* Using NPM as a Task Runner
