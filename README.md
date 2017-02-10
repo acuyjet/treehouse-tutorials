@@ -14,3 +14,4 @@ Exercises from the following courses and workshops:
 * Understanding Promises in JavaScript
 * Build a Simple Dynamic Site With Node.js
 * Using NPM as a Task Runner
+* Exploring JavaScript Conditionals
