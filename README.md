@@ -15,3 +15,4 @@ Exercises from the following courses and workshops:
 * Build a Simple Dynamic Site With Node.js
 * Using NPM as a Task Runner
 * Exploring JavaScript Conditionals
+* Gulp Basics
