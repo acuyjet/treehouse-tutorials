@@ -5,10 +5,12 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
-    maps = require('gulp-sourcemaps');
+    maps = require('gulp-sourcemaps'),
+    del = require('del');
 
 gulp.task('concat-scripts', function(){
-    gulp.src([
+    // Adding 'return' causes other tasks to wait until concat-scripts is finished
+    return gulp.src([
         'js/jquery.js',
         'js/sticky/jquery.sticky.js',
         'js/main.js'])
@@ -18,21 +20,39 @@ gulp.task('concat-scripts', function(){
         .pipe(gulp.dest('js'));
 });
 
-gulp.task('minify-scripts', function(){
-    gulp.src('js/app.js')
+gulp.task('minify-scripts', ['concat-scripts'], function(){
+    return gulp.src('js/app.js')
         .pipe(uglify())
         .pipe(rename('app.min.js'))
         .pipe(gulp.dest('js'));
 });
 
 gulp.task('compile-sass', function(){
-   gulp.src('scss/application.scss')
+   return gulp.src('scss/application.scss')
        .pipe(maps.init())
        .pipe(sass())
        .pipe(maps.write('./'))
        .pipe(gulp.dest('css'));
 });
 
-gulp.task('default', ['hello'], function(){
-    console.log('This is the default task');
+gulp.task('watch-files', function(){
+    // Don't need to return anything because no other tasks depend on this
+   gulp.watch('scss/**/*.scss', ['compile-sass']);
+   gulp.watch('js/main.js', ['concat-scripts']);
+});
+
+gulp.task('clean', function(){
+    del(['dist', 'css/application.css*', 'js/app.*.js']);
+});
+
+gulp.task('build', ['minify-scripts', 'compile-sass'], function () {
+    // 'base' option preserves directory structure
+    return gulp.src(['css/application.css', 'js/app.min.js', 'index.html', 'img/**', 'fonts/**'], {base: './'})
+        .pipe(gulp.dest('dist'));
+});
+
+gulp.task('serve', ['watch-files']);
+
+gulp.task('default', ['clean'], function () {
+    gulp.start('build');
 });

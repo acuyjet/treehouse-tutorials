@@ -51,7 +51,7 @@ a:hover {
 .main-header {
   padding-top: 170px;
   height: 850px;
-  background: linear-gradient(red, transparent 90%), linear-gradient(0deg, #fff, transparent), red url("../img/mountains.jpg") no-repeat center;
+  background: linear-gradient(#ffa949, transparent 90%), linear-gradient(0deg, #fff, transparent), #ffa949 url("../img/mountains.jpg") no-repeat center;
   background-size: cover; }
   @media (max-width: 768px) {
     .main-header {
