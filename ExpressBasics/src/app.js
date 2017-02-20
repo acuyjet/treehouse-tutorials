@@ -5,6 +5,9 @@ var express = require('express'),
 
 var app = express();
 
+// use() method defines middleware; here it will serve static files
+app.use('/static', express.static(__dirname + '/public'));
+
 app.set('view engine', 'pug');
 
 // "__dirname" variable gives path to current file
