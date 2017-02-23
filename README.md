@@ -16,3 +16,5 @@ Exercises from the following courses and workshops:
 * Using NPM as a Task Runner
 * Exploring JavaScript Conditionals
 * Gulp Basics
+* Express Basics
+* Mongo Basics
