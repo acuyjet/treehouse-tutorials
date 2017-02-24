@@ -18,3 +18,4 @@ Exercises from the following courses and workshops:
 * Gulp Basics
 * Express Basics
 * Mongo Basics
+* Building a MEAN Application
