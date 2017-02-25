@@ -19,3 +19,4 @@ Exercises from the following courses and workshops:
 * Express Basics
 * Mongo Basics
 * Building a MEAN Application
+* Angular JS
