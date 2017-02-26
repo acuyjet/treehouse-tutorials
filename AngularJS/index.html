@@ -6,21 +6,21 @@
   <link href='styles/main.css' rel='stylesheet' type="text/css">
 </head>
 <body ng-app="todoListApp">
-    <h1>My TODOs</h1>
+    <h1 ng-click="helloWorld()">My TODOs</h1>
     <div ng-controller="mainCtrl" class="list">
-        <input type="checkbox" />
-        <label class="editing-label" ng-click="helloWorld()">Sample to-do item</label>
-        <input class="editing-label" type="text"/>
-        <div class="actions" ng-controller="coolCtrl">
-            <a href="" ng-click="whoAmI()">Edit</a>
-            <a href="" ng-click="helloWorld()">Save</a>
-            <a href="" class="delete">Delete</a>
+        <div class="item" ng-class="{'editing-item': editing, 'edited': todo.edited}" ng-repeat="todo in todos">
+            <input ng-model="todo.completed" type="checkbox" />
+            <label ng-hide="editing" ng-click="helloWorld()">{{todo.name}}</label>
+            <input ng-change="todo.edited = true" ng-blur="editing = false;" ng-show="editing" ng-model="todo.name" class="editing-label" type="text"/>
+            <div class="actions">
+                <a href="" ng-click="editing = !editing">Edit</a>
+                <a href="" ng-click="helloWorld()">Save</a>
+                <a href="" class="delete">Delete</a>
+            </div>
         </div>
+        {{todos}}
     </div>
 
-    <div ng-controller="iAmASibling">
-       {{foobar}}
-    </div>
   <script src="vendor/angular.js" type="text/javascript"></script>
   <script src="scripts/app.js" type="text/javascript"></script>
 </body>

@@ -34,14 +34,17 @@ a {
       width: 60%; }
     .list .item .actions {
       float: right;
-      margin-right: 20px; }
+      margin-right: 20px;}
+        .list .item .actions a {
+            margin-right: 7px;
+        }
       .list .item .actions .delete {
         color: #ed5a5a;
-        margin-left: 10px; }
+        /*margin-left: 10px;*/ }
         .list .item .actions .delete:hover {
           color: #f28888; }
-    .list .item.editing .actions {
-      margin-top: 17px; }
+    .list .item.editing-item .actions {
+      margin-top: 17px;}
   .list .edited label:after {
     content: " edited";
     text-transform: uppercase;
@@ -54,18 +57,18 @@ a {
   .list .add {
     padding: 25px 0 27px 25px; }
 
-input[type="checkbox"] {
-    display:none;
-}
-input[type="checkbox"] + span {
-    display:inline-block;
-    width:19px;
-    height:19px;
-    margin:-1px 4px 0 0;
-    vertical-align:middle;
-    background:url(checkbox-empty.svg) left top no-repeat;
-    cursor:pointer;
-}
-input[type="checkbox"]:checked + span {
-    background:url(checkbox-filled.svg) left top no-repeat;
-}
+/*input[type="checkbox"] {*/
+    /*display:none;*/
+/*}*/
+/*input[type="checkbox"] + span {*/
+    /*display:inline-block;*/
+    /*width:19px;*/
+    /*height:19px;*/
+    /*margin:-1px 4px 0 0;*/
+    /*vertical-align:middle;*/
+    /*background:url(checkbox-empty.svg) left top no-repeat;*/
+    /*cursor:pointer;*/
+/*}*/
+/*input[type="checkbox"]:checked + span {*/
+    /*background:url(checkbox-filled.svg) left top no-repeat;*/
+/*}*/
