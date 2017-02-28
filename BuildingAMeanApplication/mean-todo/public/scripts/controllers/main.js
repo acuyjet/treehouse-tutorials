@@ -4,7 +4,7 @@ angular.module('todoListApp')
 .controller('mainCtrl', function($scope, dataService){
   
   dataService.getTodos(function(response){
-    var todos = response.data;  
+    var todos = response.data.todos;
     $scope.todos =  todos;
     });
   
