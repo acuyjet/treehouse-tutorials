@@ -6,6 +6,8 @@ var router = require('./api');
 // Create Express instance
 var app = express();
 
+require('./database');
+
 // Express middleware to serve static files -- serves the public directory when the root of the site is requested
 app.use('/', express.static('public'));
 
