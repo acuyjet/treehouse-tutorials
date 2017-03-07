@@ -7,6 +7,7 @@ var router = require('./api');
 var app = express();
 
 require('./database');
+require('./seed');
 
 // Express middleware to serve static files -- serves the public directory when the root of the site is requested
 app.use('/', express.static('public'));

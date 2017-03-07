@@ -1,6 +1,6 @@
 'use strict';
 
-var Todo = require('./models/todo');
+var Todo = require('./models/todo.js');
 
 var todos = [
     'Feed the dog',
