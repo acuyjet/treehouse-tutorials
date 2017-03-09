@@ -20,3 +20,4 @@ Exercises from the following courses and workshops:
 * Mongo Basics
 * Building a MEAN Application
 * Angular JS
+* Understanding Closures in JavaScript
