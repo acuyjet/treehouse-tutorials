@@ -22,13 +22,13 @@ var AnswerSchema = new Schema({
 });
 
 // Instance method
-AnswerSchema.methods('update', function(updates, callback) {
+AnswerSchema.method('update', function(updates, callback) {
     Object.assign(this, updates, {updatedAt: new Date()});
     this.parent().save(callback);
 });
 
 // Another instance method
-AnswerSchema.methods('vote', function(vote, callback) {
+AnswerSchema.method('vote', function(vote, callback) {
    if(vote === 'up') {
        this.votes += 1;
    } else {

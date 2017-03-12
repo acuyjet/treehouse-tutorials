@@ -27,7 +27,6 @@ router.param('aID', function(req, res, next, id, err) {
     next();
 });
 
-
 // GET /questions
 // Route for questions collection
 router.get('/', function(req, res, next) {
