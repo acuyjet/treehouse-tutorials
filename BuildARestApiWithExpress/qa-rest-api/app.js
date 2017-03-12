@@ -4,11 +4,21 @@ var express = require('express');
 var app = express();
 var jsonParser = require('body-parser').json;
 var logger = require('morgan');
+var mongoose = require('mongoose');
 var routes = require('./routes');
 
 app.use(logger('dev'));
-
 app.use(jsonParser());
+
+mongoose.connect('mongodb://localhost:27017/q-and-a');
+var db = mongoose.connection;
+db.on('error', function(err) {
+    console.error('Connection error:', err);
+});
+db.once('open', function() {
+    console.log("DB connection successful!");
+    // All database communication goes here
+});
 
 app.use('/questions', routes);
 
@@ -19,7 +29,7 @@ app.use(function(req, res, next) {
     next(err);
 });
 
-// Error handler -- extra parameter is how Express knows it's an error handler & not middlware
+// Error handler -- extra parameter is how Express knows it's an error handler & not middleware
 app.use(function(err, req, res, next){
     res.status(err.status || 500);
     res.json({
