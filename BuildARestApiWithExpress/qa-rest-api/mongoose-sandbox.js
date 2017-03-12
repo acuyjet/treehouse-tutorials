@@ -10,7 +10,7 @@ db.on('error', function(err) {
     console.error('Connection error:', err);
 });
 
-db.once('open', function(){
+db.once('open', function() {
     console.log("DB connection successful!");
     // All database communication goes here
 
@@ -18,17 +18,40 @@ db.once('open', function(){
     var AnimalSchema = new Schema({
         type: {type: String, default: 'goldfish'},
         color: {type: String, default: 'golden'},
-        size: {type: String, default: 'small'},
+        size: String,
         mass: {type: Number, default: 0.007},
         name: {type: String, default: 'Angela'}
     });
+
+    // Pre-hook middleware
+    AnimalSchema.pre('save', function(next) {
+        if(this.mass >= 100) {
+            this.size = 'big';
+        } else if (this.mass >=5 && this.mass < 100) {
+            this.size = 'medium';
+        } else {
+            this.size = 'small';
+        }
+        next();
+    });
+
+    // Static method
+    AnimalSchema.statics.findSize = function(size, callback) {
+        // this == Animal
+        return this.find({size: size}, callback);
+    };
+
+    // Instance method
+    AnimalSchema.methods.findSameColor = function(callback) {
+        // this == document
+        return this.model('Animal').find({color: this.color}, callback);
+    };
 
     var Animal = mongoose.model('Animal', AnimalSchema);
 
     var elephant = new Animal({
         type: 'elephant',
-        color: 'pink',
-        size: 'big',
+        color: 'gray',
         mass: 6000,
         name: 'Lawrence'
     });
@@ -37,23 +60,43 @@ db.once('open', function(){
 
     var whale = new Animal({
         type: 'whale',
-        size: 'big',
         mass: 190500,
         name: 'Nigel'
     });
 
+    var animalData = [
+        {
+            type: 'mouse',
+            color: 'gray',
+            mass: 0.035,
+            name: 'Marvin'
+        },
+        {
+            type: 'nutria',
+            color: 'brown',
+            mass: 6.35,
+            name: 'Gretchen'
+        },
+        {
+            type: 'wolf',
+            color: 'gray',
+            mass: 45,
+            name: 'Iris'
+        },
+        elephant,
+        animal,
+        whale
+    ];
+
     Animal.remove({}, function(err) {
-        if(err) console.error('Save failed!', err);
-        elephant.save(function(err){
-            if(err) console.error('Save failed!', err);
-            animal.save(function(err){
-                if(err) console.error('Save failed!, err');
-                whale.save(function(err) {
-                    if(err) console.error('Save failed!, err');
-                    Animal.find({size: 'big'}, function(err, animals){
-                        animals.forEach(function(animal){
-                            console.log(animal.name + ' the ' + animal.color + ' ' + animal.type);
-                        });
+        if (err) console.error(err);
+        Animal.create(animalData, function(err, animals) {
+            if (err) console.error(err);
+            Animal.findOne({type: 'elephant'}, function(err, elephant) {
+                elephant.findSameColor(function(err, animals) {
+                    if (err) console.error(err);
+                    animals.forEach(function(animal) {
+                        console.log(animal.name + ' the ' + animal.color + ' ' + animal.type + ' is a ' + animal.size + '-sized animal!');
                     });
                     db.close(function() {
                         console.log('DB connection closed!');
