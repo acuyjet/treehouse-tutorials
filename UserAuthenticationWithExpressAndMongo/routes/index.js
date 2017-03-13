@@ -18,7 +18,7 @@ router.get('/contact', function(req, res, next) {
 
 // GET /register
 router.get('/register', function(req, res, next) {
-    return res.send('Register today!');
+    return res.render('register', {title: 'Sign Up'});
 });
 
 // POST /register
