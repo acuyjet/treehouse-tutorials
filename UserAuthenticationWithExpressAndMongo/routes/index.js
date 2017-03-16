@@ -17,6 +17,23 @@ router.get('/login', function(req, res, next) {
     return res.render('login', {title: 'Log In'})
 });
 
+// GET /profile
+router.get('/profile', function(req, res, next) {
+   if (!req.session.userId) {
+       var err = new Error('You are not authorized to view this page!');
+       err.status = 403;
+       return next(err);
+   }
+   User.findById(req.session.userId)
+       .exec(function(error, user) {
+           if(error) {
+               return next(error);
+           } else {
+               return res.render('profile', {title: 'Profile', name: user.name, favorite: user.favoriteBook})
+           }
+       })
+});
+
 // GET /about
 router.get('/about', function(req, res, next) {
   return res.render('about', { title: 'About' });
@@ -48,7 +65,7 @@ router.post('/register', function(req, res, next) {
             if(error) {
                 return next(error);
             } else {
-                req.session.userID = user._id;
+                req.session.userId = user._id;
                 return res.redirect('/profile');
             }
         });
@@ -66,10 +83,11 @@ router.post('/login', function(req, res, next) {
         User.authenticate(req.body.email, req.body.password, function(error, user) {
             if(error || !user) {
                 var err = new Error('Wrong email or password!');
-                err.status(401);
+                err.status =401;
                 return next(err);
             } else {
-                req.session.userID = user._id;
+                req.session.userId = user._id;
+                return res.redirect('/profile');
             }
         });
     } else {
