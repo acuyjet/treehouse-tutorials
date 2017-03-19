@@ -11,6 +11,12 @@ app.use(session({
     saveUninitialized: false
 }));
 
+// Make user ID available to view templates
+app.use(function(req, res, next){
+    res.locals.currentUser = req.session.userId;
+    next();
+});
+
 // Mongodb connection
 mongoose.connect('mongodb://localhost:27017/bookworm');
 var db = mongoose.connection;
