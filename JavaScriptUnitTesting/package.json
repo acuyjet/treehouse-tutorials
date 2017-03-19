@@ -1,0 +1,17 @@
+{
+  "name": "javascript-unit-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "utilities.js",
+  "dependencies": {
+    "chai": "^3.5.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC"
+}

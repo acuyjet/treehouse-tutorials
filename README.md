@@ -23,3 +23,4 @@ Exercises from the following courses and workshops:
 * Understanding Closures in JavaScript
 * Build a REST API With Express
 * User Authentication With Express and Mongo
+* JavaScript Unit Testing
