@@ -7,10 +7,11 @@ function checkForShip(player, coordinates) {
             return(actualCoordinate[0] === coordinates[0]) && (actualCoordinate[1] === coordinates[1]);
         })[0];
 
-        if(!shipPresent) {
-            return false;
+        if(shipPresent) {
+            return true;
         }
     }
+    return false;
 }
 
 module.exports.checkForShip = checkForShip;
