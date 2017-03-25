@@ -24,7 +24,7 @@ describe('GAME INSTANCE FUNCTIONS', function() {
 		var guess;
 
 		beforeEach(function() {
-			guess = function() { return [0, 0] }
+			guess = function() { return [0, 0] };
 			player = {ships: [
 				{
 					locations: [[0, 0]],
@@ -37,5 +37,23 @@ describe('GAME INSTANCE FUNCTIONS', function() {
 			var actual = takeTurn(player, guess);
 			expect(actual).to.be.false;
 		})
-	})
+	});
+
+	function saveGame(callback) {
+		// Stand-in for a database function
+		setTimeout(function() {
+			callback()
+		}, 1000)
+	}
+
+	describe('saveGame', function() {
+		it('Should update saved status', function(done) {
+			var status = 'Game not saved!';
+			saveGame(function() {
+				status = 'Game saved!';
+				expect(status).to.equal('Game saved!');
+				done();
+			});
+		});
+	});
 });
