@@ -1,31 +1,44 @@
 const selenium = require('selenium-webdriver');
 const By = selenium.By;
-const URL = 'file:///Users/me2/Code/treehouse-tutorials/IntroductionToSelenium/index.html';
+
+const HomePage = require('./pages/home');
 
 const driver = new selenium.Builder()
     .forBrowser('chrome')
     .build();
 
-driver.get(URL);
+const homePage = new HomePage(driver);
+homePage.open();
 
-// Good place for an object literal!
-const locators = {
-    inviteeForm: By.id('registrar'),
-    inviteeNameField: By.css('#registrar > input[type = "text"]'),
-    toggleNonresponderVisibility: By.css('.main > div input')
-};
+const invitees = [
+    'Gonzalo Torres del Fierro',
+    'Shadd Anderson',
+    'George Aparece',
+    'Shadab Khan',
+    'Joseph Michael Casey',
+    'Jennifer Nordell',
+    'Faisal Albinali',
+    'Taron Foxworth',
+    'David Riesz',
+    'Maicej Torbus',
+    'Martin Luckett',
+    'Joel Bardsley',
+    'Reuben Varzea',
+    'Ken Alger',
+    'Amrit Pandey',
+    'Rafal Rudzinski',
+    'Brian Lynch',
+    'Lupe Camacho',
+    'Luke Fiji',
+    'Sean Christensen',
+    'Philip Graf',
+    'Mike Norman',
+    'Michael Hulet',
+    'Brent Suggs'
+];
 
-function addInvitee(name) {
-    driver.findElement(locators.inviteeNameField)
-        .sendKeys(name);
-    driver.findElement(locators.inviteeForm).submit();
-};
+invitees.forEach(homePage.addInvitee, homePage);
 
-function toggleNonresponderVisibility() {
-    driver.findElement(locators.toggleNonresponderVisibility)
-        .click();
-};
+homePage.removeInvitee('Shadd Anderson');
 
-addInvitee('Sloane Cuyjet-Brown');
-addInvitee('Harriet Brown-Cuyjet');
-toggleNonresponderVisibility();
+homePage.toggleNonresponderVisibility();
