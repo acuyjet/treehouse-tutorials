@@ -17,6 +17,12 @@ p {
 	margin-bottom: 1.8em;
 }
 
+/* Eliminates gap above header */
+
+h1 {
+	margin-top: 0;
+}
+
 h2,
 h3,
 a {
@@ -44,11 +50,18 @@ img {
 
 .name {
 	font-size: 1.25em;
+	margin: 0;
+}
+
+.main-nav {
+	margin-top: 5px;
 }
 
 .name a,
 .main-nav a {
 	text-align: center;
+	display: block;
+	padding: 10px 15px;
 }
 
 .main-nav a {
@@ -63,9 +76,36 @@ img {
 
 /* ---- Layout Containers ---- */
 
+.container {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.main-header {
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
 .banner {
 	color: #fff;
 	background: #3acec2;
+	padding: 50px 0;
+	margin-bottom: 50px;
+}
+
+.banner,
+.main-footer {
+	text-align: center;
+}
+
+.main-content {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.col {
+	padding-right: 1em;
+	padding-left: 1em;
 }
 
 .main-footer {
@@ -80,20 +120,19 @@ img {
 	width: 190px;
 }
 
+.headline {
+	margin-bottom: 0;
+}
+
 /* ================================= 
   Media Queries
 ==================================== */
 
 @media (min-width: 769px) {
-
-
-
 	/* ---- Float clearfix ---- */
-
 	.clearfix::after {
 		content: " ";
 		display: table;
 		clear: both;
 	}
-
 }
