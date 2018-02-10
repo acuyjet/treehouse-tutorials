@@ -135,4 +135,49 @@ img {
 		display: table;
 		clear: both;
 	}
+
+	.container {
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	.name,
+	.col {
+		float: left;
+	}
+
+	.main-nav {
+		float: right;
+	}
+
+	/* Displays list items horizontally */
+	.main-nav li {
+		display: inline-block;
+		margin-left: 15px;
+	}
+
+	.tagline {
+		font-size: 1.4em;
+	}
+
+	.primary,
+	.secondary {
+		width: 50%;
+	}
+}
+
+@media (min-width: 1300px) {
+	.container {
+		width: 80%;
+		max-width: 1150px;
+	}
+
+	.primary {
+		width: 40%;
+	}
+
+	.secondary,
+	.tertiary {
+		width: 30%;
+	}
 }
