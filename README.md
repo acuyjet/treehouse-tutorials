@@ -24,3 +24,4 @@ Exercises from the following courses and workshops:
 * Build a REST API With Express
 * User Authentication With Express and Mongo
 * JavaScript Unit Testing
+* Python Basics
