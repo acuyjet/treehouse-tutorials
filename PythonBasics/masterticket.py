@@ -17,7 +17,6 @@ while tickets_remaining > 0:
 		if number_tickets > tickets_remaining:
 			raise ValueError("There are only {} tickets remaining".format(tickets_remaining))
 	except ValueError as err:
-
 		print("Oops, we ran into an issue: {}. Please try again.".format(err))
 	else:
 		total_price = calculate_price(number_tickets)
