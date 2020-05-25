@@ -18,12 +18,27 @@ print("The oven is ready!")
 # When they quit, print out the list of numbers,
 # the sum and the average of all of the numbers.
 
-def total_and_average():
-    numbers = []
-    # Solution 2 here
-input("Enter a number: ")
 
-total_and_average()
+def total_and_average(numbers):
+    total = 0
+    for i in range(0, len(numbers)):
+        numbers[i] = int(numbers[i])
+        total += numbers[i]
+        average = total / len(numbers)
+    print("Your numbers: {}".format(numbers))
+    print("Total: {}".format(total))
+    print("Average: {}".format(average))
+
+
+# Solution 2 here
+numbers = []
+number = input("Enter a number, or 'q' to quit: ")
+
+while number != "q":
+    numbers.append(number)
+    number = input("Enter a number, or 'q' to quit: ")
+
+total_and_average(numbers)
 
 # Problem 3: Missbuzz
 # Write a while loop that increments current by 1
