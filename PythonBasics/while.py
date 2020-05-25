@@ -49,3 +49,8 @@ total_and_average(numbers)
 current = 1
 
 # Solution 3 here
+while current < 101:
+    if current % 3 == 0 or current % 5 == 0:
+        print(current)
+    current += 1
+
