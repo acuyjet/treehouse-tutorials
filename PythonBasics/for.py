@@ -62,6 +62,6 @@ print("Stars:")
 # Solution 4 here
 for person in BIRTHDAYS:
     if person[2] == True and person[3] <= 10:
-        print(person[0], "* "*person[3])
+        print(person[0], "* " * person[3])
 
 print("-"*20)
