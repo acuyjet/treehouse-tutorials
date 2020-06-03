@@ -42,8 +42,24 @@
 # print(add_two_nums(5, 10))
 
 
-def multiply_two_nums(num1, num2):
-	val = num1 * num2
-	return val
+# def multiply_two_nums(num1, num2):
+# 	val = num1 * num2
+# 	return val
 
-print(multiply_two_nums(6, "umbrella"))
+# print(multiply_two_nums(6, "umbrella"))
+
+# def my_function(arg1, arg2, arg3, arg4):
+#     print(arg1)
+#     print(arg2)
+#     print(arg3)
+#     print(arg4)
+
+
+# my_function("Hello", "I", "love", "python")
+
+def my_function(*args):
+	for val in args:
+		print(val)
+
+
+my_function("Hello", "I", "love", "python")
