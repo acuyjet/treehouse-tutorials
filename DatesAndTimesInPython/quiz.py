@@ -9,8 +9,9 @@ class Quiz:
 
 	def __init__(self):
 		question_types = (Add, Multiply)
+		num_questions = int(input("How many questions would you like to answer? "))
 		# Generate 10 random questions with numbers from 1 to 10
-		for _ in range(10):
+		for _ in range(num_questions):
 			num1 = random.randint(1, 10)
 			num2 = random.randint(1, 10)
 			question = random.choice(question_types)(num1, num2)
@@ -59,5 +60,6 @@ class Quiz:
 		print("You got {} out of {} right!".format(self.total_correct(), len(self.questions)))
 		# Print total time for quiz (in seconds)
 		print("It took you {} seconds total.".format((self.end_time-self.start_time).seconds))
+
 
 Quiz().take_quiz()
