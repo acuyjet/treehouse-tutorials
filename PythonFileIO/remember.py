@@ -1,10 +1,22 @@
+import sys
+
 def rememberer(thing):
 	# Open file
 	with open('database.txt', 'a') as file:
 		# Write thing to file
 		file.write(thing+'\n')
-	# # Close file
-	# file.close()
+
+def show():
+	# Open file
+	with open('database.txt') as file:
+		# Print out each line in file
+		for line in file:
+			print(line)
+	# Close file
 
 if __name__ == '__main__':
-	rememberer(input("What should I remember? "))
+	if sys.argv[1].lower() == '--list':
+		show()
+	else:
+		rememberer(' '.join(sys.argv[1:]))
+	#rememberer(input("What should I remember? "))
